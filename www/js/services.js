@@ -59,6 +59,7 @@ angular.module('jalsa.services', [])
 					url:  adminbase + '/mobileapp_api/chart',
 					method: "POST",
 					data: $.param({
+						user_id: $.jStorage.get("user").m_id,
 						event: chart,
 					}),
 				}).success(callback).error(err);

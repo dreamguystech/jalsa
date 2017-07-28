@@ -632,7 +632,7 @@ angular.module('jalsa.controllers', ['jalsa.services', 'ion-gallery', 'ngCordova
 
 .controller('HomeCtrl', function ($scope, $location, $window, MyServices, $ionicLoading, $timeout, $sce, $ionicSlideBoxDelegate) {
 	addanalytics("Home page");
-	$scope.img_url = "https://www.dreamguys.co.in/display/jalsa/";
+	$scope.img_url = "http://jalsauk.online/";
 	configreload.onallpage();
 	var showloading = function () {
 		$ionicLoading.show({

@@ -651,13 +651,13 @@ angular.module('jalsa.controllers', ['jalsa.services', 'ion-gallery', 'ngCordova
 		$location.url("/access/login");
 	}
 	$scope.content = {};
-	MyServices.gethomecontent(function (data) {
+	/*MyServices.gethomecontent(function (data) {
 		$scope.content = data;
 		$scope.content.content = $sce.trustAsHtml($scope.content.content);
 		//		$ionicLoading.hide();
 	}, function (err) {
 		$location.url("/access/offline");
-	});
+	});*/
 
 	MyServices.getallfrontmenu(function (data) {
 		MyServices.setconfigdata(data);

@@ -1,0 +1,57 @@
+<ion-view view-title="Meetings">
+    <div class="text-center positive middle-align" ng-if="msg != ''">
+        {{msg}}
+    </div>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="event in events" class="item-text-wrap" >
+                 <h2>{{event.name}}</h2>
+                 <span class="icon-space"><i class="icon ln-calendar3"></i></span><span class="font-light">{{event.mdate|date : 'dd MMM, yyyy'}}</span>
+                <br>
+                <span class="icon-space"><i class="icon ln-timer"></i></span><span class="font-light">{{event.mtime|convertto12}}</span><span class="icon-space"><i class="icon ln-map-marker"></i></span><span class="font-light">{{event.venue}}</span>
+              
+                <div ng-repeat="doc in event.document">
+                <!--{{doc.name}}-->
+                <a target="_self" id="downloadpdf" href="#" ng-click="download('https://www.dreamguys.co.in/display/jalsa/assets/meeting_documents/arrow.png')" >{{doc.name}}</a>
+                </div>
+                <div class="meeting_dtls" style="display:block;">
+                <div class="row"  style="">
+                    <div class="col" >
+                        <div class="social-link text-center facebook" ng-click="getagenda(event.id);">
+                            Agenda
+                        </div>
+                    </div><div class="col">
+                        <div class="social-link text-center twitter" >
+                            Documents
+                        </div>
+                    </div>
+                </div>
+                <div class="row"  style="">
+                    <div class="col" >
+                        <div class="social-link text-center facebook" ng-click="getinvitee(event.id);">
+                            Invitees
+                        </div>
+                    </div><div class="col">
+                        <div class="social-link text-center twitter" >
+                            Attendance
+                        </div>
+                    </div>
+                </div>
+                <div class="row"  style="">
+                    <div class="col" >
+                        <div class="social-link text-center facebook" >
+                            Minutes
+                        </div>
+                    </div><div class="col">
+                        <div class="social-link text-center twitter" >
+                            Action Points
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </ion-item>
+            <ion-infinite-scroll on-infinite="loadMorePolls()" ng-if="keepscrolling" distance="25%">
+            </ion-infinite-scroll>
+        </ion-list>
+    </ion-content>
+</ion-view>

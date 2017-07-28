@@ -1,0 +1,47 @@
+<ion-view view-title="Communications">
+    <div class="text-center positive middle-align" ng-if="msg != ''">
+        {{msg}}
+    </div>
+    <ion-content>
+    <div class="home-tab">
+            <div class="button-bar menu-tab">
+                <a class="button button-positive button-outline" ng-class="{'underline':tab=='mail'}" ng-click="tabchange('mail',1)"><span class="light">Mail</span></a>
+                <a class="button button-positive button-outline" ng-class="{'underline':tab=='sms'}" ng-click="tabchange('sms',2)"><span class="light">SMS</span></a>
+               
+            </div>
+            <div class="home" ng-show="tab=='mail'">
+               <div class="padding card" ng-repeat="com in mail" >
+                    <ion-item class="item-avatar item-icon-right">
+                        <h2>{{com.subject}}</h2>
+                        <p></p>
+                    </ion-item>
+                    <div class="item item-body" >
+                        <p>
+                            <span ng-bind-html="com.content| cut:true:367:'. . .'| rawHtml"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="home" ng-show="tab=='sms'">
+             	<div class="padding card" ng-repeat="sms in csms" >
+                    <ion-item class="item-avatar item-icon-right">
+                        <h2>{{sms.subject}}</h2>
+                    </ion-item>
+                    <div class="item item-body" >
+                        <p>
+                            <span ng-bind-html="sms.content| cut:true:367:'. . .'| rawHtml"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+
+        
+
+        <ion-infinite-scroll on-infinite="loadMorePolls()" ng-if="keepscrolling" distance="25%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

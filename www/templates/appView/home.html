@@ -1,0 +1,96 @@
+<ion-view view-title="{{title}}">
+    <ion-content>
+        <ion-slide-box on-slide-changed="slideHasChanged($index)">
+            <ion-slide ng-repeat="slide in slides track by $index">
+                <img ng-src="{{slide.image | serverimage}}" class="full-image">
+            </ion-slide>
+        </ion-slide-box>
+        
+        <div class="home-tab">
+            <div class="button-bar menu-tab">
+                <a class="button button-positive button-outline" ng-class="{'underline':tab=='information'}" ng-click="tabchange('information',1)"><span class="light">Information</span></a>
+                <a class="button button-positive button-outline" ng-class="{'underline':tab=='administration'}" ng-click="tabchange('administration',2)"><span class="light">Administration</span></a>
+                <a class="button button-positive button-outline" ng-class="{'underline':tab=='others'}" ng-click="tabchange('others',2)"><span class="light">Others</span></a>
+            </div>
+            <div class="home" ng-show="tab=='information'">
+            <div class="row librarylist" style="display:block;">
+                <div class="col col-33" ng-repeat="lib in library" ng-init="number = countInit()" style="float:left;">
+                    <div class="menu-tiles" ng-click="viewlibrary('{{lib}}');">
+                        <center><img src="{{img_url}}assets/app_images/icons/{{lib}}.png" /></center>
+                        <div class="menu-title">{{lib}}</div>
+                </div>
+            </div>
+            </div>
+            </div>
+            
+            <div class="home" ng-show="tab=='administration'">
+            
+             	<div class="row">
+            <div class="col col-33">
+				<div class="menu-tiles" ng-click="eventview('chart');">
+					<center><img src="{{img_url}}assets/app_images/icons/chart.png" /></center>
+					<div class="menu-title">Org.Chart</div>
+				</div>
+            </div>
+			<div class="col col-33">
+				<div class="menu-tiles" ng-click="eventview('meetings');">
+					<center><img src="{{img_url}}assets/app_images/icons/meetings.png" /></center>
+					<div class="menu-title">Meetings</div>
+				</div>
+            </div>
+			<div class="col col-33">
+			<div class="menu-tiles" ng-click="eventview('redbook');">
+                <center><img src="{{img_url}}assets/app_images/icons/redbook.png" /></center>
+				<div class="menu-title">Red Book</div>
+            </div>
+            </div>
+        </div>
+		<div class="row">
+            <div class="col col-33">
+			<div class="menu-tiles" ng-click="eventview('communications');">
+               <center><img src="{{img_url}}assets/app_images/icons/communications.png" /></center>
+				<div class="menu-title">Communications</div>
+            </div>
+            </div>
+			<div class="col col-33">
+			<div class="menu-tiles" ng-click="eventview('tasks');">
+                <center><img src="{{img_url}}assets/app_images/icons/tasks.png" /></center>
+				<div class="menu-title">Tasks</div>
+            </div>
+            </div>
+			<div class="col col-33">
+			<div class="menu-tiles" ng-click="eventview('action-points');">
+                <center><img src="{{img_url}}assets/app_images/icons/actions.png" /></center>
+				<div class="menu-title">Action Points</div>
+            </div>
+            </div>
+        </div>
+		<div class="row">
+            <div class="col col-33">
+			<div class="menu-tiles">
+                <center><img src="{{img_url}}assets/app_images/icons/directory.png" /></center>
+				<div class="menu-title">Directory</div>
+            </div>
+            </div>
+			
+        </div>
+            </div>
+            
+            <div class="home" ng-show="tab=='others'">
+            No Results
+            </div>
+            
+        </div>
+        
+        <div class="button-bar menu-tab libname" style="display:none;" ng-click="showhome();">   <a class="button button-positive " style="text-align:left;"><i class="icon ion-ios-arrow-back"></i>&nbsp;&nbsp; <span class="light"></span></a></div>
+       <ion-list class="row libview">
+			 <div ng-repeat="lfiles in lib_files" class="item-text-wrap" style="display:none;">
+            	<ion-item ng-repeat="lf in lfiles" data-id="{{lf.folder}}" style="display:none;">
+                	{{lf.filename ? lf.filename : 'No Files'}}
+                </ion-item>
+            </div>
+            </ion-list>
+       
+       
+    </ion-content>
+</ion-view>

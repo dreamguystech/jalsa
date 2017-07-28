@@ -1,0 +1,42 @@
+<ion-view view-title="Redbook">
+    <div class="text-center positive middle-align" ng-if="msg != ''">
+        {{msg}}
+    </div>
+    <ion-content class="padding-bottom">
+    	<ion-item ng-repeat="redbook in redbooks" class="item-text-wrap" >
+        	<div class="row">
+            <div class="col col-34">
+				Reported By:
+            </div>
+			<div class="col col-66">
+				<h2>{{redbook.name}}</h2>
+            </div></div><div class="row">
+            <div class="col col-34">
+				Department :
+            </div>
+			<div class="col col-66">
+				{{redbook.department}}
+            </div></div><div class="row">
+            <div class="col col-33">
+				Sector :
+            </div>
+			<div class="col col-66">
+				{{redbook.sector}}
+            </div></div><div class="row">
+            <div class="col col-33">
+				Issue :
+            </div>
+			<div class="col col-66">
+				{{redbook.issue}}
+            </div></div><div class="row">
+            <div class="col col-34">
+				Discussion :
+            </div>
+			<div class="col col-66">
+				{{redbook.discussion}}
+            </div>
+        </div>
+        </ion-item>
+        
+    </ion-content>
+</ion-view>

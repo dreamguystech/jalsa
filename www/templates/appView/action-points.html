@@ -1,0 +1,116 @@
+<ion-view view-title="Tasks">
+    <ion-content>
+        <div class="home-tab">
+            <div class="button-bar menu-tab">
+                <a class="button button-positive button-outline" ng-class="{'underline':tab=='myaction'}" ng-click="tabchange('myaction',1)"><span class="light">My Actions</span></a>
+                <a class="button button-positive button-outline" ng-class="{'underline':tab=='assignaction'}" ng-click="tabchange('assignaction',2)"><span class="light">Assigned Actions</span></a>
+            </div>
+            <div class="home" ng-show="tab=='myaction'">
+            <ion-item ng-repeat="aaction in assignaction" class="item-text-wrap" >
+        	<div class="row">
+            <div class="col col-34">
+				Action Type:
+            </div>
+			<div class="col col-66">
+				<h2>{{aaction.act_type}}</h2>
+            </div></div><div class="row">
+            <div class="col col-34">
+				From :
+            </div>
+			<div class="col col-66">
+				{{aaction.name}}
+            </div></div><div class="row">
+            <div class="col col-33">
+				To :
+            </div>
+			<div class="col col-66">
+				{{aaction.ass_to}}
+            </div></div><div class="row">
+            <div class="col col-33">
+				Description :
+            </div>
+			<div class="col col-66">
+				{{aaction.description}}
+            </div></div><div class="row">
+            <div class="col col-34">
+				Minutes Notes :
+            </div>
+			<div class="col col-66">
+				{{aaction.minute_notes}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-34">
+				Action Notes :
+            </div>
+			<div class="col col-66">
+				{{aaction.action_notes}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-34">
+				End Date :
+            </div>
+			<div class="col col-66">
+				{{aaction.deadline}}
+            </div>
+        </div>
+        </ion-item>
+            </div>
+            
+            <div class="home" ng-show="tab=='assignaction'">
+            <ion-item ng-repeat="maction in myaction" class="item-text-wrap" >
+        	<div class="row">
+            <div class="col col-34">
+				Action Type:
+            </div>
+			<div class="col col-66">
+				<h2>{{maction.act_type}}</h2>
+            </div></div><div class="row">
+            <div class="col col-34">
+				From :
+            </div>
+			<div class="col col-66">
+				{{maction.name}}
+            </div></div><div class="row">
+            <div class="col col-33">
+				To :
+            </div>
+			<div class="col col-66">
+				{{maction.ass_to}}
+            </div></div><div class="row">
+            <div class="col col-33">
+				Description :
+            </div>
+			<div class="col col-66">
+				{{maction.description}}
+            </div></div><div class="row">
+            <div class="col col-34">
+				Minutes Notes :
+            </div>
+			<div class="col col-66">
+				{{maction.minute_notes}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-34">
+				Action Notes :
+            </div>
+			<div class="col col-66">
+				{{maction.action_notes}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-34">
+				End Date :
+            </div>
+			<div class="col col-66">
+				{{maction.deadline}}
+            </div>
+        </div>
+        </ion-item>
+        </div>
+        
+       
+    </ion-content>
+</ion-view>

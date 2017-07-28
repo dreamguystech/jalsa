@@ -1,0 +1,100 @@
+<ion-view view-title="Tasks">
+    <ion-content>
+        <div class="home-tab">
+            <div class="button-bar menu-tab">
+                <a class="button button-positive button-outline" ng-class="{'underline':tab=='mytask'}" ng-click="tabchange('mytask',1)"><span class="light">My Tasks</span></a>
+                <a class="button button-positive button-outline" ng-class="{'underline':tab=='assigntask'}" ng-click="tabchange('assigntask',2)"><span class="light">Assigned Task</span></a>
+            </div>
+            <div class="home" ng-show="tab=='mytask'">
+            <ion-item ng-repeat="atask in assigntask" class="item-text-wrap" >
+        	<div class="row">
+            <div class="col col-34">
+				Task No:
+            </div>
+			<div class="col col-66">
+				<h2>{{atask.task_no}}</h2>
+            </div></div><div class="row">
+            <div class="col col-34">
+				From :
+            </div>
+			<div class="col col-66">
+				{{atask.name}}
+            </div></div><div class="row">
+            <div class="col col-33">
+				To :
+            </div>
+			<div class="col col-66">
+				{{atask.ass_to}}
+            </div></div><div class="row">
+            <div class="col col-33">
+				Department :
+            </div>
+			<div class="col col-66">
+				{{atask.department}}
+            </div></div><div class="row">
+            <div class="col col-34">
+				Description :
+            </div>
+			<div class="col col-66">
+				{{atask.description}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-34">
+				End Date :
+            </div>
+			<div class="col col-66">
+				{{atask.deadline}}
+            </div>
+        </div>
+        </ion-item>
+            </div>
+            
+            <div class="home" ng-show="tab=='assigntask'">
+            <ion-item ng-repeat="mtask in mytask" class="item-text-wrap" >
+        	<div class="row">
+            <div class="col col-34">
+				Task No:
+            </div>
+			<div class="col col-66">
+				<h2>{{mtask.task_no}}</h2>
+            </div></div><div class="row">
+            <div class="col col-34">
+				From :
+            </div>
+			<div class="col col-66">
+				{{mtask.name}}
+            </div></div><div class="row">
+            <div class="col col-33">
+				To :
+            </div>
+			<div class="col col-66">
+				{{mtask.ass_to}}
+            </div></div><div class="row">
+            <div class="col col-33">
+				Department :
+            </div>
+			<div class="col col-66">
+				{{mtask.department}}
+            </div></div><div class="row">
+            <div class="col col-34">
+				Description :
+            </div>
+			<div class="col col-66">
+				{{mtask.description}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-34">
+				End Date :
+            </div>
+			<div class="col col-66">
+				{{mtask.deadline}}
+            </div>
+        </div>
+        </ion-item>
+        </div>
+        
+       
+    </ion-content>
+</ion-view>

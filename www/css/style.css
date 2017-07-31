@@ -45,7 +45,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cf153d', end
 }
 .bar .title {
     height: 60px;
-    line-height: 60px;}
+    /*line-height: 60px;*/
+    padding: 8px 0;
+}
 	.menu-set .item.bordered {
     border-left: 3px solid #b51423;
 }
@@ -149,6 +151,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cf153d', end
 }
 .menu-tab .button.underline {
     border-bottom: 2px solid #fff !important;
+	border-radius:0;
 }
 .menu-tab .button.button-positive.button-outline {
     color: #fff;
@@ -159,3 +162,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cf153d', end
     float: left;
     width: 100%;
 }
+.slider-slides .full-image {float:left;}

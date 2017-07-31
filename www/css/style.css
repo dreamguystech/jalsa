@@ -163,3 +163,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cf153d', end
     width: 100%;
 }
 .slider-slides .full-image {float:left;}
+
+.menu-tiles img {width:60px;}

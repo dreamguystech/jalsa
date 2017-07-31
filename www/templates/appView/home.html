@@ -76,14 +76,14 @@
         </div>
             </div>
             
-            <div class="home" ng-show="tab=='others'">
+            <div class="home padding" ng-show="tab=='others'">
             No Results
             </div>
             
         </div>
         
-        <div class="button-bar menu-tab libname" style="display:none;" ng-click="showhome();">   <a class="button button-positive " style="text-align:left;"><i class="icon ion-ios-arrow-back"></i>&nbsp;&nbsp; <span class="light"></span></a></div>
-       <ion-list class="row libview">
+        <div class="button-bar libname" style="display:none;" ng-click="showhome();">   <a class="button button-positive " style="text-align:left;"><i class="icon ion-ios-arrow-back"></i>&nbsp;&nbsp; <span class="light"></span></a></div>
+       <ion-list class="row padding libview">
 			 <div ng-repeat="lfiles in lib_files" class="item-text-wrap" style="display:none;">
             	<ion-item ng-repeat="lf in lfiles" data-id="{{lf.folder}}" style="display:none;">
                 	{{lf.filename ? lf.filename : 'No Files'}}

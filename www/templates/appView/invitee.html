@@ -2,16 +2,16 @@
     <div class="text-center positive middle-align" ng-if="msg != ''">
         {{msg}}
     </div>
-    <ion-content class="padding-bottom">
-        <h2>Invitees</h2>
+    <ion-content class="padding-bottom padding">
+        <h3>Invitees</h3>
         <ion-item ng-repeat="inv in invite" class="item-text-wrap" >
         {{inv.name}} - {{inv.mcode}}
         </ion-item>
-        <h2>Guests</h2>
+        <h3>Guests</h3>
         <ion-item ng-repeat="alm in allmem" class="item-text-wrap" >
         {{alm.name}} - {{alm.mcode}}
         </ion-item>
-        <h2>Members</h2>
+        <h3>Members</h3>
         <ion-item ng-repeat="cmem in c_mem" class="item-text-wrap" >
         {{cmem.name}}
         </ion-item>
